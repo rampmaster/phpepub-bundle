@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="false" autoconfigure="false" public="false"/>
+
+        <service id="Rampmaster\PhpEpubBundle\Factory\EPubFactory" class="Rampmaster\PhpEpubBundle\Factory\EPubFactory">
+            <argument>%rampmaster_php_epub.default_language%</argument>
+            <argument>%rampmaster_php_epub.default_version%</argument>
+            <tag name="rampmaster_php_epub.factory"/>
+        </service>
+
+        <service id="rampmaster_php_epub.factory" alias="Rampmaster\PhpEpubBundle\Factory\EPubFactory" public="true"/>
+    </services>
+</container>
