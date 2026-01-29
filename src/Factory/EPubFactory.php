@@ -6,9 +6,26 @@ use Rampmaster\EPub\Core\EPub;
 
 class EPubFactory
 {
+    /**
+     * Default language for EPub books (e.g., 'en', 'es', 'fr')
+     */
     private string $defaultLanguage;
+
+    /**
+     * Default EPUB version (2.0.1, 3.0, 3.0.1, 3.1, or 3.2)
+     */
     private string $defaultVersion;
 
+    /**
+     * Constructor
+     * 
+     * Note: When used as a Symfony service, these values are automatically 
+     * injected from the bundle configuration (rampmaster_php_epub.default_language 
+     * and rampmaster_php_epub.default_version).
+     *
+     * @param string $defaultLanguage Default language for EPub books (default: 'en')
+     * @param string $defaultVersion Default EPUB version (default: '3.2')
+     */
     public function __construct(string $defaultLanguage = 'en', string $defaultVersion = '3.2')
     {
         $this->defaultLanguage = $defaultLanguage;
@@ -17,6 +34,11 @@ class EPubFactory
 
     /**
      * Create a new EPub instance with the specified version
+     *
+     * @param string|null $version EPUB version (2.0.1, 3.0, 3.0.1, 3.1, or 3.2). 
+     *                             If null, uses the default version from configuration.
+     *                             Invalid versions will default to 3.2.
+     * @return EPub The configured EPub instance
      */
     public function create(?string $version = null): EPub
     {

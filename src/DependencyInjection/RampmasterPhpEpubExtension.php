@@ -9,6 +9,13 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 class RampmasterPhpEpubExtension extends Extension
 {
+    /**
+     * Load the bundle configuration
+     *
+     * @param array<int, array<string, mixed>> $configs Configuration array
+     * @param ContainerBuilder $container The container builder
+     * @throws \Exception If the configuration cannot be loaded
+     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();

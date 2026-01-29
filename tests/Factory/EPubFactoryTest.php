@@ -49,4 +49,12 @@ class EPubFactoryTest extends TestCase
         
         $this->assertInstanceOf(EPub::class, $epub);
     }
+
+    public function testCreateWithInvalidVersionDefaultsTo32(): void
+    {
+        $epub = $this->factory->create('invalid-version');
+        
+        // Invalid versions should default to EPUB 3.2
+        $this->assertInstanceOf(EPub::class, $epub);
+    }
 }

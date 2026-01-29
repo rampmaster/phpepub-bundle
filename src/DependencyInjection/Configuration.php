@@ -7,6 +7,15 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * Get the configuration tree builder
+     *
+     * Defines the bundle configuration structure:
+     * - default_language: Default language for EPUB books (default: 'en')
+     * - default_version: Default EPUB version (2.0.1, 3.0, 3.0.1, 3.1, or 3.2, default: '3.2')
+     *
+     * @return TreeBuilder The configuration tree
+     */
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('rampmaster_php_epub');
