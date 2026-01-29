@@ -97,6 +97,12 @@ $book = $epubFactory->createEpub2();
 // Create an EPUB 3.0 book
 $book = $epubFactory->createEpub3();
 
+// Create an EPUB 3.0.1 book
+$book = $epubFactory->createEpub301();
+
+// Create an EPUB 3.1 book
+$book = $epubFactory->createEpub31();
+
 // Create an EPUB 3.2 book (default)
 $book = $epubFactory->createEpub32();
 

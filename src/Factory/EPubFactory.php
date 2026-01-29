@@ -76,6 +76,22 @@ class EPubFactory
     }
 
     /**
+     * Create an EPUB 3.0.1 book
+     */
+    public function createEpub301(): EPub
+    {
+        return $this->create('3.0.1');
+    }
+
+    /**
+     * Create an EPUB 3.1 book
+     */
+    public function createEpub31(): EPub
+    {
+        return $this->create('3.1');
+    }
+
+    /**
      * Create an EPUB 3.2 book (default)
      */
     public function createEpub32(): EPub

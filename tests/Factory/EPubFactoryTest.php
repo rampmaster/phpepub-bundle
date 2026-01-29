@@ -36,6 +36,20 @@ class EPubFactoryTest extends TestCase
         $this->assertInstanceOf(EPub::class, $epub);
     }
 
+    public function testCreateEpub301(): void
+    {
+        $epub = $this->factory->createEpub301();
+        
+        $this->assertInstanceOf(EPub::class, $epub);
+    }
+
+    public function testCreateEpub31(): void
+    {
+        $epub = $this->factory->createEpub31();
+        
+        $this->assertInstanceOf(EPub::class, $epub);
+    }
+
     public function testCreateEpub32(): void
     {
         $epub = $this->factory->createEpub32();
